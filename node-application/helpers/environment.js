@@ -3,9 +3,14 @@
  * @type {exports}
  */
 
+var path = require('path');
+
 exports.init = function(){
 
-    switch ( __dirname ){
+    var root = path.resolve( __dirname, '../' );
+
+    switch ( root ){
+
         case '/sites/my-application':
 
             process.env.NODE_ENV = 'production';
