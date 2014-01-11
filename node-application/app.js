@@ -1,7 +1,13 @@
 var http = require('http');
 var pid = require('./helpers').pid;
+var environment = require('./helpers').environment;
 
 pid.make();
+environment.init();
+
+if( process.env.NEW_RELIC_ENABLED ){
+    var newrelic = require('newrelic');
+}
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
