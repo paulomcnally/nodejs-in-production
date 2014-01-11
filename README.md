@@ -1,4 +1,4 @@
 nodejs-in-production
 ====================
 
-eBook NodeJS in production exampl files
+eBook NodeJS in production example files
