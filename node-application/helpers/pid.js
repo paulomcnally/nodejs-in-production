@@ -17,10 +17,13 @@ function getPidPath( ){
 exports.make = function( ){
 
     // on application exit remove pid file
-    process.on('exit', function() {
-
+    //so the program will not close instantly
+    process.stdin.resume();
+    process.on('exit', function (){
         fs.unlinkSync( getPidPath( ) );
-
+    });
+    process.on('SIGINT', function () {
+        process.exit(0);
     });
 
     // kill pid and remove file only if file exist
