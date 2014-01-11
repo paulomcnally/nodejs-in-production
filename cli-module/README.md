@@ -1,0 +1,1 @@
+Edita el archivo ./lib/config.js para asignar la ip de tu aplicación

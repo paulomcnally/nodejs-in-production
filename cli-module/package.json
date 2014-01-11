@@ -1,0 +1,27 @@
+{
+    "name": "my-application-cli",
+    "version": "0.0.1",
+    "description": "Deploy applications server",
+    "author": "Paulo McNally <paulomcnally@gmail.com>",
+    "maintainers": [
+        {
+            "name": "Paulo McNally",
+            "email": "pmcnally@sersanantonio.com"
+        }
+    ],
+    "keywords": ["ser", "api", "cloud", "deploy", "cli"],
+    "dependencies": {
+        "request": "2.30.0",
+        "prompt": "0.2.12",
+        "colors": "0.6.2"
+    },
+    "directories": { "lib": "./lib/cli" },
+    "main": "./index.js",
+    "bin" : {
+        "ser" : "./bin/deploy"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://bitbucket.org/teamSER/ser-web-cli.git"
+    }
+}

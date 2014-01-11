@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+var cli = require('../lib/cli');
+
+var applications = ['my-application','my-application-cloud'];
+var commands = ['start','restart','status','deploy'];
+
+var application = ( process.argv[2] ) ? process.argv[2] : null;
+var command = ( process.argv[3] ) ? process.argv[3] : null;
+
+
+/**
+ * Error
+ * application is null
+ */
+if( !application ){
+    cli.error(0);
+    process.exit(0);
+}
+
+if( application === 'version' ){
+    cli.version();
+    process.exit(100);
+}
+
+
+/**
+ * Error
+ * Command is null
+ */
+if( !command ){
+    cli.error(1);
+    process.exit(1);
+}
+
+/**
+ * Error
+ * application don't exist in applications
+ */
+if( ( applications.indexOf(application) != -1 ) === false ){
+    cli.error(2);
+    process.exit(2);
+}
+
+/**
+ * Error
+ * command don't exist in commands
+ */
+if( ( commands.indexOf(command) != -1 ) === false ){
+    cli.error(3);
+    process.exit(3);
+}
+
+
+/**
+ * Succes
+ * execute application and command
+ */
+cli.execute( application, command );
